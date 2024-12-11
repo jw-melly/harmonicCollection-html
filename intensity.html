@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="intensty.css">
+    <title>Addicted</title>
+</head>
+<body>
+    <a href="frenzy.html" class="button left"></a>
+    <a href="Gamism.html" class="button right"></a>
+
+
+    <div class="container">
+      <div class="gauge-wrapper">
+          <div class="gauge-bar" id="gauge-bar"></div>
+      </div>
+      <button class="gauge-button" id="gauge-button">GET MORE?</button>
+  </div>
+
+<div class="box">
+  <div class="group">
+      <div class="b1"></div>
+      <div class="b2">Addicted</div>
+      <div class="b3"></div>
+      <div class="b4">WARNING: Falling in love may cause sleepless nights, heart flutters, and uncontrollable smiles. Proceed with caution.</div>
+      <div class="b5"></div>
+      <div class="b6">Say No to Drugs.</div>
+
+  </div>
+</div>
+
+<script>
+  // 초기 게이지 상태
+let gaugeValue = 0;
+
+// 버튼 및 게이지 바 요소 선택
+const gaugeBar = document.getElementById("gauge-bar");
+const gaugeButton = document.getElementById("gauge-button");
+
+// 버튼 클릭 이벤트 리스너
+gaugeButton.addEventListener("click", () => {
+    if (gaugeValue < 100) {
+        gaugeValue += 10;  // 게이지 증가 (10%씩)
+        gaugeBar.style.width = gaugeValue + "%";
+
+        if (gaugeValue >= 100) {
+            gaugeButton.innerText = "Ouch!";
+            gaugeButton.disabled = true;
+            gaugeButton.style.background = "#999";
+        }
+    }
+});
+
+</script>
+</body>
+</html>

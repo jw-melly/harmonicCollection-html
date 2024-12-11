@@ -1,0 +1,191 @@
+@font-face {
+  font-family: 'Pixelmania';
+  src: url('pixelmania/Pixelmania.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'BrownBulgary';
+  src: url('font/BrownBulgary') format('truetype');
+}
+
+.h1 {
+  margin-top: 40px;
+  font-size: 50px;
+  text-align: center;
+  font-family: 'Pixelmania';
+}
+
+.marquee-container {
+  position: relative;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden; 
+  z-index: 1000; 
+  margin-top: 50px;
+}
+
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap; 
+  color: whitesmoke; 
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'BrownBulgary';
+
+}
+
+
+body {
+  background-color: #f1b1c9;
+  font-family: 'BrownBulgary';
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: auto; 
+  gap: 10px;
+  perspective: 1000px; 
+  max-width: calc(100vw - 600px); 
+  margin: 0 auto; 
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.card {
+  position: relative;
+  width: 90%; 
+  aspect-ratio: 9 / 16;
+  transform-style: preserve-3d;
+  margin: 0 auto; 
+}
+
+    .card-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+
+    
+    .card:hover .card-content {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+   
+    .card-front {
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .card-back {
+      background-color: #f0bcc8;
+      color: #ed7994;
+      text-align: center;
+      padding: 20px;
+      transform: rotateY(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+    }
+
+ 
+
+.button {
+  position: absolute;
+  top: 10px;
+  cursor: pointer;
+  background: none; 
+  border-style: solid;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 왼쪽 화살표 버튼 */
+.button.left {
+  left: 10px;
+  border-width: 10px 15px 10px 0; 
+  border-color: transparent #BCC4DB transparent transparent;
+  width: 0; 
+  height: 0;
+}
+
+/* 오른쪽 화살표 버튼 */
+.button.right {
+  right: 10px;
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #BCC4DB;
+  width: 0;
+  height: 0;
+}
+
+/* Hover Effects */
+.button:hover {
+  border-right-color: #F3E9DD;
+}
+
+.button.right:hover {
+  border-left-color: #F3E9DD;
+}
+
+/* 클릭 가능한 영역 확장 */
+.button::after {
+  content: "";
+  position: absolute;
+  top: -10px; 
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: 1; 
+  background: transparent; 
+  pointer-events: auto; 
+}
+
+
+/* 엑스트라 이미지 마퀴 컨테이너 */
+.extra-marquee-container {
+  width: 100%;
+  overflow: hidden; /* 화면 밖으로 나간 부분 숨기기 */
+  padding: 10px 0;
+  margin-top: 20px; /* 기존 콘텐츠와 간격 */
+}
+
+/* 엑스트라 이미지 마퀴 */
+.extra-marquee {
+  display: flex;
+  gap: 40px; /* 이미지 간 간격 */
+  animation: scroll-left 15s linear infinite; /* 좌우 애니메이션 */
+}
+
+/* 엑스트라 이미지 */
+.extra-marquee img {
+  object-fit: contain; /* 이미지 비율 유지하며 크기 조정 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+/* 마퀴 애니메이션 */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%); /* 화면 밖 오른쪽에서 시작 */
+  }
+  100% {
+    transform: translateX(-100%); /* 화면 밖 왼쪽으로 이동 */
+  }
+}

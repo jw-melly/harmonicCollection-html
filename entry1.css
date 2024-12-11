@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'dogica';
+  src: url('fontfamily.dogica') format('truetype');
+}
+
+body{
+    background-color: #b0befd;
+    text-align: center;
+    height: 2000px; 
+    position: relative;
+    font-size: 24px;
+    font-family: 'dogica';
+    color: #ffff28;
+}
+h1{
+    font-size: 100px;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+p{
+    
+}
+
+.random-image {
+    position: absolute;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    width: 100px; 
+   
+  }
+
+  .random-image, .extra-image {
+    position: absolute;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+  
+    cursor: pointer;
+  }
+
+ 
+  .extra-image {
+    display: none; 
+    width: 500px;
+  }
+
+  /* Navigation Buttons */
+.button {
+  position: absolute;
+  top: 10px;
+  cursor: pointer;
+  background: none; /* 배경 제거 */
+  border-style: solid;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 왼쪽 화살표 버튼 */
+.button.left {
+  left: 10px;
+  border-width: 10px 15px 10px 0; /* 위쪽, 오른쪽, 아래쪽, 왼쪽 순서로 설정 */
+  border-color: transparent #f7ecf4 transparent transparent;
+  width: 0; /* 화살표 모양을 유지하기 위해 width와 height를 0으로 설정 */
+  height: 0;
+}
+
+/* 오른쪽 화살표 버튼 */
+.button.right {
+  right: 10px;
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #f7ecf4;
+  width: 0;
+  height: 0;
+}
+
+/* Hover Effects */
+.button:hover {
+  border-right-color: #F3E9DD;
+}
+
+.button.right:hover {
+  border-left-color: #F3E9DD;
+}
+
+/* 클릭 가능한 영역 확장 */
+.button::after {
+  content: "";
+  position: absolute;
+  top: -10px; /* 클릭 영역을 화살표보다 크게 */
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: 1; /* 클릭 영역이 최상위에 오도록 설정 */
+  background: transparent; /* 배경을 투명하게 */
+  pointer-events: auto; /* 클릭 가능하도록 설정 */
+}

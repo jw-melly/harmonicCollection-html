@@ -1,0 +1,254 @@
+@font-face {
+    font-family: 'dogica';
+    src: url('./fonts/fontfamily.dogica.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'guardener';
+    src: url('guardener/guardener.ttf') format('truetype');
+}
+/* 초기 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #ff0000;
+}
+
+/* 상자 스타일 */
+
+
+.box {
+    width: 1400px;
+    height: 800px;
+    background:black;
+        clip-path: polygon(
+            0% 0%,     
+            60% 0%,    
+            65% 5%,   
+            95% 5%,   
+            100% 10%,   
+            100% 100%,
+            0% 100%   
+        );
+    position: relative; /* 위치 조정 가능 */
+    padding: 20px;
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* 상자 그룹 */
+.group {
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    display: flex;
+    font-family: 'dogica';
+}
+
+/* 개별 상자 */
+.b1 {
+    position: absolute;
+    background: #ffcc00;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    width: 900px;
+    height: 600px;
+    margin-top: 120px;
+    left: 120px;
+    border-radius: 5px;
+    background-image: url('pixelfile/\ -3.jpg'); /* 이미지 경로 */
+    background-size: 550px;   /* 이미지 크기 조정 */
+    background-position: center;  /* 중앙 정렬 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+}
+
+.b2 {
+    color: #ff0000;
+    background: #ffcc00;
+    padding: 20px;
+    text-align: center;
+    font-family: 'guardener';
+    border: 2px solid #ff0000;
+    font-size: 65px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 450px;
+    height: 100px;
+    left: -100px;  /* 부모의 왼쪽에서 -100px (왼쪽 바깥으로 이동) */
+   
+}
+
+
+.b3 {
+    position: absolute;
+    background: #ffcc00;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #333;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100px;
+    height: 650px;
+    top: 120px;
+    left: 0px;
+    background-image: url('pixelfile/addicted\ file.png'); /* 이미지 경로 */
+    background-size: 400px;   /* 이미지 크기 조정 */
+    background-position: center;  /* 중앙 정렬 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+}
+
+.b4 {
+    position: absolute;
+    background: #ffcc00;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #333;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 280px;
+    height: 280px;
+    top: 120px;
+    right: 20px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.b5 {
+    position: absolute;
+    background: #ffcc00;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #333;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 280px;
+    height: 280px;
+    top: 440px;
+    right: 20px;
+    z-index: 5;
+    background-image: url('pixelfile/\ -2.jpg'); /* 이미지 경로 */
+    background-size: 550px;   /* 이미지 크기 조정 */
+    background-position: center;  /* 중앙 정렬 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+}
+
+.b6 {
+    position: absolute;
+    background: #7af5fa;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #333;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 280px;
+    height: 280px;
+    top: 440px;
+    right: 20px;
+    z-index: 4;
+}
+
+
+/* 원하는 위치로 이동 */
+.gauge-wrapper {
+    position: absolute;
+    width: 1010px;
+    height: 35px;
+    background: #ffcc00;
+    border: 4px solid #ffcc00;
+    border-radius: 20px;
+    z-index: 3;
+    top: 780px;     /* 아래로 이동 */
+    left: 200px;    /* 오른쪽으로 이동 */
+}
+
+/* 게이지 바 */
+.gauge-bar {
+    position: absolute;
+    width: 1000px;
+    height: 30px;
+    background: linear-gradient(90deg, #ffcc00, red);
+    transition: width 0.3s ease-in-out;
+    border-radius: 20px;
+    z-index: 2;
+    bottom: -1.5px;
+}
+
+/* 버튼 */
+.gauge-button {
+    position: absolute;
+    padding: 15px 30px;
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+    background: #fe3bc8;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    align-items: center;
+    z-index: 4;
+    font-family: guardener;
+    top: 630px;   
+    right: 630px;
+}
+
+.gauge-button:hover {
+    background: red;
+}
+
+/* 버튼 스타일 */
+.button {
+    position: absolute;
+    top: 20px;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    background: none; 
+    border-style: solid;
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+    }
+    
+    /* 왼쪽 화살표 버튼 */
+    .button.left {
+    left: 10px;
+    border-width: 10px 15px 10px 0; 
+    border-color: transparent #BCC4DB transparent transparent;
+    width: 0; 
+    height: 0;
+    }
+    
+    /* 오른쪽 화살표 버튼 */
+    .button.right {
+    right: 10px;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent #BCC4DB;
+    width: 0;
+    height: 0;
+    }
+    
+    .button:hover {
+    border-right-color: #F3E9DD;
+    }
+    
+    .button.right:hover {
+    border-left-color: #F3E9DD;
+    }
+    

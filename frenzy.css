@@ -1,0 +1,108 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'dogica';
+    src: url('./fonts/fontfamily.dogica.ttf') format('truetype');
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'dogica', sans-serif;
+    overflow: hidden;
+    background: red;
+}
+
+/* 글리치 텍스트 컨테이너 */
+.glitch-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background: black;
+}
+
+.glitch-text {
+    font-size: 1.5rem;
+    color: white;
+    position: absolute;
+    opacity: 0;
+    animation: blink 0.55s infinite ease-in-out;
+}
+
+/* 깜빡임 애니메이션 */
+@keyframes blink {
+    0%, 49% { opacity: 0; }
+    50%, 100% { opacity: 1; }
+}
+
+/* 일러스트 이미지 */
+.illustration {
+    position: absolute;
+    bottom: 5%;        /* 아래쪽 여백 */
+    right: 25%;         /* 오른쪽 여백 */
+    width: 450px;
+    height: auto;
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));
+}
+
+/* 텍스트 박스 */
+.text-box {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    top: 5%;            /* 위쪽 여백 */
+    left: 15%;           /* 왼쪽 여백 */
+    padding: 2rem 3rem;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 8px;
+    color: white;
+    max-width: 600px;
+    justify-content: center; /* 수직 가운데 정렬 */
+    align-items: center; 
+    font-family: 'dogica';
+
+}
+
+.text-box p {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+
+.text-box span {
+    font-weight: bold;
+}
+
+/* 버튼 그룹 */
+.button-group {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;   /* 수평 중앙 정렬 */
+    align-items: center;       /* 수직 중앙 정렬 */
+    gap: 2rem; 
+}
+
+/* 버튼 스타일 */
+.btn {
+    padding: 0.8rem 2rem;
+    font-size: 1.5rem;
+    font-family: 'dogica';
+    color: white;
+    background: black;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background: white;
+    color: black;
+}
+

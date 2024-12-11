@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion</title>
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="entry2.css">
+  </head>
+  <body>
+
+      <!-- 달 이미지 -->
+      <div class="moon-container">
+        <img src="sourcefile/moon.png" class="moon" alt="Moon">
+        <button class="click-btn" type="button" >Click!</button>
+      </div>
+
+    <div id="text-container">
+      <div id="left-text" class="text-box left-text hidden">
+        <p>I want to shine like the moon.<br> 
+        Time never gives me enough to explain why.<br>
+        Because I’ve never seen anything as beautiful,<br>
+        And because I’ve watched that moon every night.<br>
+        I’ve drawn countless thoughts from it,<br>
+        And fled there alone so many times.<br>
+        No one will ever tell me I shine like the moon.<br>
+        I don’t expect them to.<br>
+        But still,<br><br>
+        I hope someone beyond that ocean<br>
+        Mistakes me for the moon.</p>
+    </div>
+    
+    <div id="right-text" class="text-box right-text hidden">
+      <p>I want to shine like the moon. <br>
+  Because, The moon can light up someone’s night.<br>
+  Because, it is beautiful simply by existing,<br>
+  And because it brightens my nights every evening.<br>
+  The moon illuminates both the paths I think about<br>
+  And the path I flee.<br>
+  I’ve never thought anyone I met shone like the moon.<br>
+  But, you know,<br><br>
+  Someone beyond that ocean—<br>
+  Are you the moon?</p>
+    </div>
+  </div>
+
+  <!--백그라운드 이미지 -->
+  <img src="pixelfile/pixel-art-cityscape-1364325-wallhere.com.jpg" class="background-img" alt="city">  
+  
+   
+
+    <!-- 유성우 -->
+    <div id="meteor-container"></div>
+
+    <!-- 버튼 -->
+    <a href="foodism1.html" class="button left"></a>
+    <a href="Musism.html" class="button right"></a>
+
+
+    <!-- JavaScript -->
+    <script>
+  document.addEventListener('DOMContentLoaded', () => {
+      let clickCount = 0;
+
+      const clickButton = document.querySelector('.click-btn');
+      const leftText = document.getElementById('left-text');
+      const rightText = document.getElementById('right-text');
+
+      clickButton.addEventListener('click', () => {
+        clickCount++;
+
+        if (clickCount === 1) {
+          leftText.classList.remove('hidden');  // 첫 번째 클릭 시 왼쪽 텍스트 표시
+        } else if (clickCount === 2) {
+          rightText.classList.remove('hidden');  // 두 번째 클릭 시 오른쪽 텍스트 표시
+          clickButton.disabled = true;  // 더 이상 클릭 비활성화
+        }
+      });
+    });
+
+      function createMeteor() {
+        const container = document.getElementById("meteor-container");
+
+        // 유성 생성
+        const meteor = document.createElement("div");
+        meteor.classList.add("meteor");
+
+        // 랜덤 시작 위치
+        const startX = Math.random() * window.innerWidth - 100;
+        const startY = Math.random() * -200;
+        const fallDuration = Math.random() * 1.5 + 0.8;
+        const meteorSize = Math.random() * 3 + 2;
+
+        // 유성 스타일 적용
+        meteor.style.left = `${startX}px`;
+        meteor.style.top = `${startY}px`;
+        meteor.style.width = `${meteorSize}px`;
+        meteor.style.animationDuration = `${fallDuration}s`;
+
+        container.appendChild(meteor);
+
+        // 애니메이션 후 제거
+        setTimeout(() => {
+          container.removeChild(meteor);
+        }, fallDuration * 1000);
+      }
+
+      // 유성 생성 주기
+      setInterval(createMeteor, 150);
+
+
+    </script>
+
+  </body>
+</html>

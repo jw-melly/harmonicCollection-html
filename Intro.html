@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal Creed</title>
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="Intro.css">
+    
+  </head>
+  <body>
+    <p id="intro-text"></p>
+
+
+    <!-- Navigation Buttons -->
+    <a href="HarmonicCollection.html" class="button left"></a>
+    <a href="Entry1.html" class="button right"></a>
+
+    <div class="top-section">
+      <div class="floating-letters">
+        <span>A</span><span>d</span><span>o</span><span>r</span><span>e</span>
+      </div>
+      <div class="floating-letters">
+        <span>S</span><span>a</span><span>v</span><span>r</span><span>e</span>
+      </div>
+      <div class="floating-letters">
+        <span>S</span><span>e</span><span>n</span><span>s</span><span>e</span>
+      </div>
+      <div class="floating-letters">
+        <span>C</span><span>r</span><span>a</span><span>v</span><span>i</span><span>n</span><span>g</span>
+      </div>
+    </div>
+
+    <div class="bottom-section">
+      <div class="floating-letters">
+        <span>M</span><span>a</span><span>n</span><span>i</span><span>a</span><span>c</span>
+      </div>
+      <div class="floating-letters">
+        <span>F</span><span>r</span><span>e</span><span>n</span><span>s</span><span>y</span>
+      </div>
+      <div class="floating-letters">
+        <span>I</span><span>n</span><span>t</span><span>e</span><span>n</span><span>s</span><span>i</span><span>t</span><span>y</span>
+      </div>
+      <div class="floating-letters">
+        <span>O</span><span>b</span><span>s</span><span>e</span><span>s</span><span>s</span><span>O</span><span>v</span><span>e</span><span>r</span>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".floating-letters span").forEach((letter) => {
+        const randomDelay = Math.random() * 2; // Random delay between 0-2 seconds
+        letter.style.animationDelay = `${randomDelay}s`;
+      });
+// Text to Type
+const text = `Hi, my name is Melly.
+Nice to meet you.
+I want to share the world as I see and interpret it.
+That's also practice of expressing myself.
+You may discover who I am — what I love, what I fear,
+what I enjoy, and what I feel heartbreaking.
+Understanding others is a journey into unexplored worlds.
+Through this journey, I hope to understand myself better,
+and for you,I wish it becomes an opportunity to discover
+a new perspective on the world.`;
+
+let i = 0;
+
+// Typing Animation Function
+function typeEffect() {
+  const target = document.getElementById("intro-text");
+  
+  if (i < text.length) {
+    const currentChar = text.charAt(i);
+
+    // Append character with line break replacement
+    if (currentChar === "\n") {
+      target.innerHTML += "<br>";
+    } else {
+      target.innerHTML += currentChar;
+    }
+
+    i++;
+    setTimeout(typeEffect, 50); // Typing speed
+  }
+}
+
+// Start animation when page loads
+window.onload = typeEffect;
+
+    </script>
+
+  </body>
+</html>

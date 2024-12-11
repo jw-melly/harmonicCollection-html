@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'dogica';
+    src: url('fontfamily.dogica.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: 'guardener';
+    src: url('guardener/guardener.ttf') format('truetype'); 
+}
+
+body {
+    background-color: black;
+}
+
+.typo {
+    color: white;
+    text-align: center;
+    font-family: 'guardener';
+}
+/* Text Styles */
+.title {
+
+    font-size: 220px; /* 큰 텍스트 */
+    font-weight: bold;
+    margin-top: 220px;
+    margin-bottom: 30px;
+}
+
+.question {
+    font-size: 60px; /* 질문 강조 */
+    margin-bottom: 10px;
+}
+
+.option {
+    display: inline-block;
+    font-size: 28px; 
+    margin: 35px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out; /* 부드러운 효과 추가 */
+}
+
+/* 호버 시 크기 확대 */
+.option:hover {
+    transform: scale(1.3); 
+}
+
+
+.option:hover {
+    transform: scale(1.3); /* 크기 확대 */
+}
+
+.option.yes {
+    color: white;
+    margin-bottom: 150px;
+}
+
+.option.no {
+    color: white;
+
+}
+
